@@ -1,0 +1,23 @@
+{
+  "root": {
+    "children": {
+      "api": {
+        "children": {
+          "users": {
+            "children": {
+              ":id": {
+                "children": {
+                  "posts": { "children": {}, "endpoint": "get_user_posts" }
+                },
+                "endpoint": "get_user_by_id"
+              }
+            },
+            "endpoint": "get_users"
+          }
+        },
+        "endpoint": ""
+      }
+    },
+    "endpoint": ""
+  }
+}

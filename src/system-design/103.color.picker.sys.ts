@@ -1,0 +1,3 @@
+/* 
+Design a color picker system where each user will select a color and it will be saved in the system. They can share the color with each other
+*/
