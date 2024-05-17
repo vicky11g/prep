@@ -21,13 +21,13 @@ const merge = (l: number[], r: number[]) => {
   while (li < l.length && ri < r.length) {
     if (l[li] < r[ri]) {
       a.push(l[li]);
-      li++
+      li++;
     } else {
       a.push(r[ri]);
       ri++;
     }
   }
   // console.log(l, r);
-  a = a.concat(l.slice(li),r.slice(ri))
+  a = a.concat(l.slice(li), r.slice(ri));
   return a;
-}
+};
