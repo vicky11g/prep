@@ -27,6 +27,24 @@ import { get_words_from_phone_number } from './132.words.from.phone.numbers';
 import { getAllBinary } from './133.all.binary.fo.n.size';
 import { generate_all_combinations } from './134.subsets.sum.equal.to';
 import { find_all_arrangements } from './130.n.qeen.problem';
+import { TreeNode } from './data-structures/linked.list.node';
+import { solve_sudoku_puzzle } from './140.sudoku.solver';
+const test = () => {
+  let root = new TreeNode(8);
+  root.left = new TreeNode(5);
+  root.left.left = new TreeNode(2);
+  root.left.right = new TreeNode(7);
+  root.right = new TreeNode(10);
+  root.right.right = new TreeNode(12);
+
+  let helper = (node) => {
+    if (node === null) return 0;
+    let leftSum = helper(node.left);
+    let rightSum = helper(node.right)
+    return node.val + leftSum + rightSum
+  }
+  return helper(root);
+}
 
 const _run = () => {
   // console.log(heapSort([5, 3, 1, 1, 3, 5, 0, 9]));
@@ -69,6 +87,21 @@ const _run = () => {
   // console.log(get_words_from_phone_number('10'));
   // console.log(getAllBinary(3));
   // console.log(generate_all_combinations([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25],300));
-  console.log(find_all_arrangements(3));
+  // console.log(find_all_arrangements(4));
+  // console.log('R: ',test());
+  console.log(solve_sudoku_puzzle([
+    [8, 4, 9, 0, 0, 3, 5, 7, 0],
+    [0, 1, 0, 0, 0, 0, 0, 0, 0],
+    [7, 0, 0, 0, 9, 0, 0, 8, 3],
+    [0, 0, 0, 9, 4, 6, 7, 0, 0],
+    [0, 8, 0, 0, 5, 0, 0, 4, 0],
+    [0, 0, 6, 8, 7, 2, 0, 0, 0],
+    [5, 7, 0, 0, 1, 0, 0, 0, 4],
+    [0, 0, 0, 0, 0, 0, 0, 1, 0],
+    [0, 2, 1, 7, 0, 0, 8, 6, 5]
+  ]));
 };
 _run();
+
+
+
